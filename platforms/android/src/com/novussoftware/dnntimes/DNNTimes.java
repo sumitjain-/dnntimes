@@ -30,7 +30,7 @@ public class DNNTimes extends DroidGap
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///android_asset/www/index.html")
+        //super.loadUrl("file:///assets/www/index.html")
     }
 }
 
