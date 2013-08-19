@@ -80,7 +80,9 @@
             
             app.initialize();
             
-            navigator.notification.alert("Reached here !!");
+            alert("Reached here !!");
+            var pushNotification = window.plugins.pushNotification;
+            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
             
             function get_post(postId){
                 $.getJSON(config.serverUrl+'public_lib/get_news/'+postId, function(data){

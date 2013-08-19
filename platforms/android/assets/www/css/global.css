@@ -9,7 +9,7 @@
 @media (min-width: 980px) { 
 
 #header_text{
-    font-size:50px ;
+    font-size:380% ;
 }
 
 }
@@ -18,7 +18,7 @@
 @media (min-width: 768px) and (max-width: 979px) { 
 
 #header_text{
-    font-size:40px ;
+    font-size:330% ;
 }
     
 }
@@ -27,7 +27,7 @@
 @media (max-width: 767px) {
 
 #header_text{
-    font-size:35px ;
+    font-size:300% ;
 }
 
 }
@@ -36,7 +36,7 @@
 @media (max-width: 480px) {
 
 #header_text{
-    font-size:25px ;
+    font-size:250% ;
 }
 
 }

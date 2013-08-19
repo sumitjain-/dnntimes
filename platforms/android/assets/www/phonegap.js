@@ -1817,7 +1817,6 @@ function findCordovaPath() {
     var path = null;
     var scripts = document.getElementsByTagName('script');
     var term = 'cordova.js';
-    alert("Running phonegap.js !");
     for (var n = scripts.length-1; n>-1; n--) {
         var src = scripts[n].src;
         if (src.indexOf(term) == (src.length - term.length)) {
