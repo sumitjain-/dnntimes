@@ -41,7 +41,7 @@ var app = {
         var parentElement = document.getElementById(id);
         
         var pushNotification = window.plugins.pushNotification;
-        pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"51975193249","ecb":"app.onNotificationGCM"});
+        pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"470915515710","ecb":"app.onNotificationGCM"});
         
         console.log('Received Event: ' + id);
     }
