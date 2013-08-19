@@ -3,3 +3,9 @@ $(document).ready(function(){
     config.serverUrl = 'http://dnn-times.com/';
     
 });
+
+$.ajaxSetup({
+    "error":function(){ 
+        $("#notif_display").append('<li>No network</li>');
+    }
+});
