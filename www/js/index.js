@@ -39,7 +39,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        alert(device.platform);
+        alert("Reached here !!");
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"470915515710","ecb":"app.onNotificationGCM"});
         
