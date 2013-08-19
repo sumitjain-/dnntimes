@@ -1,0 +1,42 @@
+@font-face{font-family: heading;src: url('bauhaus-93.ttf');} 
+
+#header_text{
+    margin:10px ;
+    font-family:heading  ;
+}
+
+/* Large desktop */
+@media (min-width: 980px) { 
+
+#header_text{
+    font-size:380% ;
+}
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+
+#header_text{
+    font-size:330% ;
+}
+    
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+#header_text{
+    font-size:300% ;
+}
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+#header_text{
+    font-size:250% ;
+}
+
+}
