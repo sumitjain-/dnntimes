@@ -11,10 +11,10 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
         <param name="android-package" value="org.apache.cordova.core.NetworkManager" />
-        
     </feature>
-    <plugin name="NetworkStatus" value="org.apache.cordova.core.NetworkManager"/>
-    <access origin="*" />
+    <plugin name="NetworkStatus" value="org.apache.cordova.core.NetworkManager" />
+    <access origin="http://127.0.0.1*" />
+    <access origin="http://dnn-times.com" />
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="permissions" value="none" />
