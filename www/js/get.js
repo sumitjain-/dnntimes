@@ -12,6 +12,7 @@ $(document).ready(function(){
         //var i=1 ;
         console.log(data);
         
+        
     }).error(function(){
         alert("Check internet connection and re-open the app..");
     });

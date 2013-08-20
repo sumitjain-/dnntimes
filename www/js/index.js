@@ -16,11 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var regID;
 
 var app = {
     // Application Constructor
     initialize: function() {
+        
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -35,6 +35,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        
         app.receivedEvent('deviceready');
         
         
@@ -58,9 +59,8 @@ var app = {
         receivedEvent: function(id) {
             var pushNotification = window.plugins.pushNotification;
             // TODO: Enter your own GCM Sender ID in the register call for Android
-            
             if (device.platform == 'android' || device.platform == 'Android') {
-                pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"470915515710","ecb":"app.onNotificationGCM"});
+                pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"410953095310","ecb":"app.onNotificationGCM"});
             }
             else {
                 pushNotification.register(this.tokenHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
@@ -104,7 +104,7 @@ var app = {
                         // here is where you might want to send it the regID for later use.
                         document.getElementById('txtreg').value = e.regid;
                         regID = e.regid;
-                        alert('registration id = '+e.regid);s
+                        alert('registration id = '+e.regid);
                     }
                 break;
      
