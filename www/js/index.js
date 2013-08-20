@@ -83,7 +83,7 @@ var app = {
                     // here is where you might want to send it the regID for later use.
                     //document.getElementById('txtreg').value = e.regid;
                     regID = e.regid;
-                    alert('registration id = '+e.regid);
+                    //alert('registration id = '+e.regid);
                 }
             break;
 

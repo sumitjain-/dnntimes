@@ -434,8 +434,6 @@ Copyright ©2013 DNN Corp. All rights reserved.
         <script type="text/javascript">
             app.initialize();
             
-            alert("Welcome !!");
-            
             function submit_form(){
             
                     var form = $("#feedback_form"),
@@ -450,7 +448,7 @@ Copyright ©2013 DNN Corp. All rights reserved.
                         type: formMethod,  
                         data: formData,  
                         success:function(data){  
-                            responseMsg.html("Registered successfully"); 
+                            responseMsg.html("Feedback sent"); 
                         },
                         error:function(){
                             responseMsg.html("Something went wrong. Try again later.");
@@ -479,7 +477,7 @@ Copyright ©2013 DNN Corp. All rights reserved.
                         type: formMethod,  
                         data: formData,  
                         success:function(data){  
-                            responseMsg.html("Feedback sent"); 
+                            responseMsg.html("Registered successfully"); 
                         },
                         error:function(){
                             responseMsg.html("something went wrong");
