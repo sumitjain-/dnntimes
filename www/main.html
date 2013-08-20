@@ -16,6 +16,7 @@
         		<h1 id="header_text">DNN <span class="times">Times</span></h1>
                 <a href="#options" data-icon="gear" class="ui-btn-right">Options</a>
         	</div>
+            
             <div data-role="content">
                 <ul data-role="listview" data-theme="a" data-inset="false" id="notif_display">
                     <li>Loading...</li>
@@ -24,6 +25,22 @@
                     <li>No more posts..</li>
                 </ul>
             </div>
+            
+            <div id="register_device" data-role="page" data-theme="b" data-overlay-theme="a">
+                <h3 class="post_headline">Register your device</h3>
+                <br>
+                <hr>
+                <br>
+                <form action="http://localhost:8888/dnntime/public_lib/ffff" method="post" onsubmit="return register_device()">
+                    <input type="text" name="register_name" placeholder="Name"  />
+                    <br>
+                    <input type="text" name="register_email" placeholder="E-mail ID"  />
+                    <br>
+                    <input type="number" name="register_mobnum" placeholder="Mobile number"  />
+                    <input type="submit" value="Send" />
+                </form>
+            </div>
+            
         </div>
         <div data-role="page" id="post" data-add-back-btn="true" >
             <div class="header" data-role="header" data-position="fixed">
@@ -40,15 +57,38 @@
                 <p class="post_content">Loading...</p>
             </div>
         </div>
+        
         <div data-role="page" id="options" data-add-back-btn="true" >
             <div class="header" data-role="header" data-position="fixed">
         		<h1 id="header_text">DNN <span class="times">Times</span></h1>
         	</div>
             <ul data-role="listview" data-theme="a">
+                <li><a href="#register_device" >Register</a></li>
                 <li><a href="#terms" >Terms of use</a></li>
                 <li><a href="#feedback" >Send feedback</a></li>
                 <li data-theme="b" data-icon="back"><a href="#index" >Back to home</a></li>
             </ul>
+        </div>
+        
+        <div id="register_device" data-role="page" data-theme="b" data-overlay-theme="a" data-add-back-btn="true" >
+            <div class="header" data-role="header" data-position="fixed">
+                
+        		<h1 id="header_text">DNN <span class="times">Times</span></h1>
+        	</div>
+            <div data-role="content">
+                <h3 class="post_headline">Register your device</h3>
+                <br>
+                <hr>
+                <br>
+                <form action="http://localhost:8888/dnntime/public_lib/ffff" method="post" onsubmit="return register_device()">
+                    <input type="text" name="register_name" placeholder="Name"  />
+                    <br>
+                    <input type="text" name="register_email" placeholder="E-mail ID"  />
+                    <br>
+                    <input type="number" name="register_mobnum" placeholder="Mobile number"  />
+                    <input type="submit" value="Send" />
+                </form>
+            </div>
         </div>
         
         <div id="terms" data-role="page" data-add-back-btn="true">
@@ -370,19 +410,19 @@ Copyright ©2013 DNN Corp. All rights reserved.
         		<h1 id="header_text">DNN <span class="times">Times</span></h1>
                 <a href="#options" data-icon="gear" class="ui-btn-right">Options</a>
         	</div>
-            <div data-role="content">
+            <div data-role="content" data-theme="a">
                 <h1 class="post_headline">Send feedback</h1>
                 <br>
                 <hr>
                 <br>
-                <form action="http://dnn-times.com/public_lib/ffff">
+                <form action="http://localhost:8888/dnntime/public_lib/ffff" method="post" onsubmit="return submit_form()" id="feedback_form">
                     <input type="text" name="feedback_name" id="basic" placeholder="Name"  />
                     <br>
-                    <textarea name="feedback_message" id="basic" placeholder="Message"></textarea>
+                    <textarea name="feedback_message" placeholder="Message"></textarea>
                     <br><br>
                     <input type="submit" value="Send" />
                 </form>
-                
+                <p id="feedback_return"></p>
                 
             </div>
         </div>
@@ -403,8 +443,6 @@ Copyright ©2013 DNN Corp. All rights reserved.
             app.initialize();
             
             alert("Welcome !!");
-            var pushNotification = window.plugins.pushNotification;
-            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
             
             function get_post(postId){
                 
@@ -420,16 +458,62 @@ Copyright ©2013 DNN Corp. All rights reserved.
                     $(".post_date").html("DNN Times | "+data[0].dnn_post_date);
                     $(".post_content").html(data[0].dnn_post_place+": "+ data[0].dnn_post_content);
                 });
+            }         
+            
+            function submit_form(){
+            
+                    var form = $("#feedback_form"),
+                        formData = form.serialize(),
+                        formUrl = form.attr("action"),  
+                        formMethod = form.attr('method'),   
+                        responseMsg = $('#feedback_return');
+                    
+                    
+                    $.ajax({
+                        url: formUrl,  
+                        type: formMethod,  
+                        data: formData,  
+                        success:function(data){  
+                            
+                        },
+                        error:function(){
+                            
+                        }
+                    });
+                    
+                    return false ;
+            
             }
             
-            function reachable(){
-                $("#notif_display").append('<li>No network</li>');;
-            }
+            function register_device(){
             
+                    var form = $("#register_device"),
+                        formData = form.serialize(),
+                        formUrl = form.attr("action"),  
+                        formMethod = form.attr('method');
+                    
+                    
+                    $.ajax({  
+                        url: formUrl,  
+                        type: formMethod,  
+                        data: formData,  
+                        success:function(data){  
+                            responseMsg.html("Feedback sent"); 
+                        },
+                        error:function(){
+                            responseMsg.html("something went wrong");
+                        }
+                    });
+                    
+                    return false ;
+            
+            }
             
             
             $(document).ready(function(){
                 
+                                
+                });
                 
             });
         </script>
