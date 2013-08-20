@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var regID;
 
 var app = {
     // Application Constructor
@@ -57,7 +58,7 @@ var app = {
         receivedEvent: function(id) {
             var pushNotification = window.plugins.pushNotification;
             // TODO: Enter your own GCM Sender ID in the register call for Android
-            alert("running");
+            
             if (device.platform == 'android' || device.platform == 'Android') {
                 pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"470915515710","ecb":"app.onNotificationGCM"});
             }
