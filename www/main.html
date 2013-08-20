@@ -488,11 +488,6 @@ Copyright ©2013 DNN Corp. All rights reserved.
             
             }
             
-        </script>
-        
-        <script type="text/javascript">
-            
-            
             function get_post(postId){
                 
                 $(".post_headline").html("Loading...");
@@ -507,31 +502,15 @@ Copyright ©2013 DNN Corp. All rights reserved.
                     $(".post_date").html("DNN Times | "+data[0].dnn_post_date);
                     $(".post_content").html(data[0].dnn_post_place+": "+ data[0].dnn_post_content);
                 });
-            }         
-            
-            function register_device(){
-            
-                    var form = $("#register_device"),
-                        formData = form.serialize(),
-                        formUrl = form.attr("action"),  
-                        formMethod = form.attr('method');
-                            
-                    
-                    $.ajax({  
-                        url: formUrl,  
-                        type: formMethod,  
-                        data: formData,  
-                        success:function(data){  
-                            responseMsg.html("Feedback sent"); 
-                        },
-                        error:function(){
-                            responseMsg.html("something went wrong");
-                        }
-                    });
-                    
-                    return false ;
-            
             }
+            
+        </script>
+        
+        <script type="text/javascript">
+            
+            
+                     
+            
             
             
             $(document).ready(function(){
