@@ -74,6 +74,7 @@
                     <input type="hidden" name="reg_key" id="reg_key" />
                     <input type="submit" value="Send" />
                 </form>
+                <h5 id="register_response"></h5>
             </div>
         </div>
         
@@ -448,10 +449,10 @@ Copyright ©2013 DNN Corp. All rights reserved.
                         type: formMethod,  
                         data: formData,  
                         success:function(data){  
-                            responseMsg.html("Feedback sent"); 
+                            responseMsg.html("Registered successfully"); 
                         },
                         error:function(){
-                            responseMsg.html("something went wrong");
+                            responseMsg.html("Something went wrong. Try again later.");
                         }
                     });
                     
@@ -467,7 +468,8 @@ Copyright ©2013 DNN Corp. All rights reserved.
                 var form = $("#register_new"),
                     formData = form.serialize(),
                     formUrl = form.attr("action"),  
-                    formMethod = form.attr('method');
+                    formMethod = form.attr('method'),
+                    responseMsg = $("#register_response");
                     
                    
                 
