@@ -33,6 +33,8 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        
+        
         var pushNotification = window.plugins.pushNotification;
         // TODO: Enter your own GCM Sender ID in the register call for Android
         if (device.platform == 'android' || device.platform == 'Android') {
@@ -40,6 +42,7 @@ var app = {
         }
         else {
             pushNotification.register(this.tokenHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
+            console.log("here");
         }
         //var parentElement = document.getElementById(id);
         //var listeningElement = parentElement.querySelector('.listening');
