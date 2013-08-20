@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css">
         <link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
         
-        <link rel="stylesheet" type="text/css" href="css/global.css" />
+        <link rel="stylesheet" type="text/css" href="css/global.css">
         <title>DNN Times</title>
     </head>
     <body>
@@ -24,21 +24,6 @@
                 <ul data-role="listview" data-theme="b" data-inset="true">
                     <li>No more posts..</li>
                 </ul>
-            </div>
-            
-            <div id="register_device" data-role="page" data-theme="b" data-overlay-theme="a">
-                <h3 class="post_headline">Register your device</h3>
-                <br>
-                <hr>
-                <br>
-                <form action="http://localhost:8888/dnntime/public_lib/ffff" method="post" onsubmit="return register_device()">
-                    <input type="text" name="register_name" placeholder="Name"  />
-                    <br>
-                    <input type="text" name="register_email" placeholder="E-mail ID"  />
-                    <br>
-                    <input type="number" name="register_mobnum" placeholder="Mobile number"  />
-                    <input type="submit" value="Send" />
-                </form>
             </div>
             
         </div>
@@ -80,12 +65,13 @@
                 <br>
                 <hr>
                 <br>
-                <form action="http://localhost:8888/dnntime/public_lib/ffff" method="post" onsubmit="return register_device()">
+                <form action="http://dnn-times.com/public_lib/register_user" id="register_new" method="post" onsubmit="return register_device()">
                     <input type="text" name="register_name" placeholder="Name"  />
                     <br>
                     <input type="text" name="register_email" placeholder="E-mail ID"  />
                     <br>
                     <input type="number" name="register_mobnum" placeholder="Mobile number"  />
+                    <input type="hidden" name="reg_key" id="reg_key" />
                     <input type="submit" value="Send" />
                 </form>
             </div>
@@ -448,6 +434,59 @@ Copyright ©2013 DNN Corp. All rights reserved.
             
             alert("Welcome !!");
             
+            function submit_form(){
+            
+                    var form = $("#feedback_form"),
+                        formData = form.serialize(),
+                        formUrl = form.attr("action"),  
+                        formMethod = form.attr('method'),   
+                        responseMsg = $('#feedback_return');
+                    
+                    
+                    $.ajax({
+                        url: formUrl,  
+                        type: formMethod,  
+                        data: formData,  
+                        success:function(data){  
+                            responseMsg.html("Feedback sent"); 
+                        },
+                        error:function(){
+                            responseMsg.html("something went wrong");
+                        }
+                    });
+                    
+                    return false ;
+            
+            }
+            
+            function register_device(){    
+                
+                $("#reg_key").val(regID);
+                console.log(regID);
+                
+                var form = $("#register_new"),
+                    formData = form.serialize(),
+                    formUrl = form.attr("action"),  
+                    formMethod = form.attr('method');
+                    
+                   
+                
+                    $.ajax({  
+                        url: formUrl,  
+                        type: formMethod,  
+                        data: formData,  
+                        success:function(data){  
+                            responseMsg.html("Feedback sent"); 
+                        },
+                        error:function(){
+                            responseMsg.html("something went wrong");
+                        }
+                    });
+                    
+                    return false ;
+            
+            }
+            
         </script>
         
         <script type="text/javascript">
@@ -469,38 +508,13 @@ Copyright ©2013 DNN Corp. All rights reserved.
                 });
             }         
             
-            function submit_form(){
-            
-                    var form = $("#feedback_form"),
-                        formData = form.serialize(),
-                        formUrl = form.attr("action"),  
-                        formMethod = form.attr('method'),   
-                        responseMsg = $('#feedback_return');
-                    
-                    
-                    $.ajax({
-                        url: formUrl,  
-                        type: formMethod,  
-                        data: formData,  
-                        success:function(data){  
-                            
-                        },
-                        error:function(){
-                            
-                        }
-                    });
-                    
-                    return false ;
-            
-            }
-            
             function register_device(){
             
                     var form = $("#register_device"),
                         formData = form.serialize(),
                         formUrl = form.attr("action"),  
                         formMethod = form.attr('method');
-                    
+                            
                     
                     $.ajax({  
                         url: formUrl,  
