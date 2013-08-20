@@ -501,6 +501,10 @@ Copyright ©2013 DNN Corp. All rights reserved.
                     $(".post_headline").html(data[0].dnn_post_title);
                     $(".post_date").html("DNN Times | "+data[0].dnn_post_date);
                     $(".post_content").html(data[0].dnn_post_place+": "+ data[0].dnn_post_content);
+                }).error(function(){
+                    $(".post_headline").html("");
+                    $(".post_date").html("");
+                    $(".post_content").html("Something went wrong. Please try again later.");
                 });
             }
             
