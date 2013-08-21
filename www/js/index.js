@@ -90,7 +90,7 @@ var app = {
             case 'message':
               // this is the actual push notification. its format depends on the data model
               // of the intermediary push server which must also be reflected in GCMIntentService.java
-              
+              alert(e.message);
             break;
 
             case 'error':
