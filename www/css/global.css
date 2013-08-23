@@ -55,10 +55,6 @@ hr {
     font-size:240%;
 }
 
-.ui-header .ui-btn-inner {
-    font-size:150% ;
-}
-
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -84,10 +80,6 @@ hr {
     font-size:200%;
 }
 
-.ui-header .ui-btn-inner {
-    font-size:125% ;
-}
-
 }
 
 /* Landscape phone to portrait tablet */
@@ -111,10 +103,6 @@ hr {
 
 .ui-btn-inner{
     font-size:170%;
-}
-
-.ui-header .ui-btn-inner {
-    font-size:100% ;
 }
 
 }
