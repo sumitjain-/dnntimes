@@ -1,4 +1,5 @@
 function refresh_feeds(){
+    
     $.getJSON(config.serverUrl+'public_lib/json_news_50', function(data){
         var no_of_notif = data.length;
         

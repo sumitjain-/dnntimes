@@ -11,6 +11,16 @@
         <title>DNN Times</title>
     </head>
     <body>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="PushNotification.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        
+        <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
+        
+        
         <div class="wrap" data-role="page" id="index">
         	<div class="header" data-role="header" data-position="fixed">
         		<a href="" onclick="refresh_feeds()" data-icon="refresh" class="ui-btn-left">Refresh</a>
@@ -67,12 +77,14 @@
                 <hr>
                 <br>
                 <form action="http://dnn-times.com/public_lib/register_user" id="register_new" method="post" onsubmit="return register_device()">
-                    <input type="text" name="register_name" placeholder="Name"  />
-                    <br>
-                    <input type="text" name="register_email" placeholder="E-mail ID"  />
-                    <br>
-                    <input type="number" name="register_mobnum" placeholder="Mobile number"  />
+                    <input type="text" name="register_name" id="register_name" placeholder="Name"  />
+                    <br><p id="name_error"></p>
+                    <input type="text" name="register_email" id="register_email" placeholder="E-mail ID"  />
+                    <br><p id="email_error"></p>
+                    <input type="number" name="register_mobnum" id="register_mobnum" placeholder="Mobile number"  />
+                    <br><p id="mobnum_error"></p>
                     <input type="hidden" name="reg_key" id="reg_key" />
+                    <input type="hidden" name="reg_platform" id="reg_platform" />
                     <input type="submit" value="Send" />
                 </form>
                 <h5 id="register_response"></h5>
@@ -417,13 +429,6 @@ Copyright ©2013 DNN Corp. All rights reserved.
         
         
         <!--<script type="text/javascript" src="phonegap.js"></script>-->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="PushNotification.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        
-        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-        
-        <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
         
         <script type="text/javascript" src="js/config.js"></script>
         
@@ -459,9 +464,56 @@ Copyright ©2013 DNN Corp. All rights reserved.
             
             }
             
+            function form_validation(){
+                
+                    $("#name_error").html("");
+                    $("#email_error").html("");
+                    $("#mobnum_error").html("");
+                
+                var register_name = $("#register_name").val();
+                var register_email = $("#register_email").val();
+                var register_mobnum = $("#register_mobnum").val();
+                console.log("name = "+ register_name);
+                console.log("E-mail = "+ register_email);
+                console.log("Mobile number = "+ register_mobnum);
+                
+                var valid = 1 ;
+                
+                if( register_name == ""){
+                    $("#name_error").html("Please enter a valid name");
+                    console.log("No name");
+                    console.log("name = "+ register_name);
+                    valid = 0 ;
+                    
+                }else{
+                    console.log("name = "+ register_name);
+                };
+                
+                if( register_email == ""){
+                    $("#email_error").html("Please enter a valid E-mail ID");
+                    console.log("No E-mail");
+                    valid = 0 ;
+                }else{
+                    
+                };
+                
+                if( register_mobnum == ""){
+                    $("#mobnum_error").html("Please enter a valid mobile number");
+                    console.log("No mobile number");
+                    valid = 0 ;
+                }else{
+                    
+                };
+                
+                
+                return valid ;
+                
+            }
+            
             function register_device(){    
                 
                 $("#reg_key").val(regID);
+                $("#reg_platform").val(device.platform);
                 console.log(regID);
                 
                 var form = $("#register_new"),
@@ -470,7 +522,9 @@ Copyright ©2013 DNN Corp. All rights reserved.
                     formMethod = form.attr('method'),
                     responseMsg = $("#register_response");
                     
-                   
+                var check_form = form_validation();
+                
+                if(check_form){
                 
                     $.ajax({  
                         url: formUrl,  
@@ -485,6 +539,10 @@ Copyright ©2013 DNN Corp. All rights reserved.
                     });
                     
                     return false ;
+                    
+                }else{
+                    return false ;
+                }
             
             }
             
@@ -520,7 +578,6 @@ Copyright ©2013 DNN Corp. All rights reserved.
             $(document).ready(function(){
                 
                                 
-                });
                 
             });
         </script>

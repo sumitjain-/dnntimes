@@ -55,6 +55,10 @@ hr {
     font-size:240%;
 }
 
+.ui-header .ui-btn-inner {
+    font-size:170% ;
+}
+
 }
 
 /* Portrait tablet to landscape and desktop */
