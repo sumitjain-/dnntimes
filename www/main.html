@@ -527,11 +527,13 @@ Copyright ©2013 DNN Corp. All rights reserved.
                 if(check_form){
                 
                     $.ajax({  
-                        url: formUrl,  
+                        url: formUrl,
+                        dataType: "html",
                         type: formMethod,  
                         data: formData,  
                         success:function(data){  
-                            responseMsg.html("Registered successfully"); 
+                            responseMsg.html(data);
+                            console.log(data);
                         },
                         error:function(){
                             responseMsg.html("something went wrong");
