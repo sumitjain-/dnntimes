@@ -1,0 +1,172 @@
+@font-face{font-family: heading;src: url('bauhaus-93.ttf');} 
+
+#header_text{
+    margin:10px ;
+    font-family:heading  ;
+}
+
+.post_headline {
+    font-family:sans-serif ;
+    font-weight:900 ;
+    font-size:2.3em ;
+    margin:20px 3% ;
+}
+
+.post_date {
+    font-family:sans-serif ;
+    color:#999 ;
+    
+    margin:20px 3% ;
+}
+
+hr {
+    width: 90% ;
+    color:#f00 ;
+    border:solid #eee 1px ;
+}
+
+.post_content {
+    font-family:sans-serif ;
+    line-height:150%;
+    
+    margin:20px 3% ;
+}
+
+/* Large desktop */
+@media (min-width: 980px) { 
+
+#header_text{
+    font-size:380% ;
+}
+
+.post_headline {
+    font-size:380% ;
+}
+
+.post_date{
+    font-size:170% ;
+}
+
+.post_content{
+    font-size:240% ;
+}
+
+.ui-btn-inner{
+    font-size:240%;
+}
+
+.ui-header .ui-btn-inner {
+    font-size:170% ;
+}
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+
+#header_text{
+    font-size:330% ;
+}
+
+.post_headline {
+    font-size:330% ;
+}
+
+.post_date{
+    font-size:150% ;
+}
+
+.post_content{
+    font-size:180% ;
+}
+
+.ui-btn-inner{
+    font-size:200%;
+}
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+#header_text{
+    font-size:300% ;
+}
+
+.post_headline {
+    font-size:280% ;
+}
+
+.post_date{
+    font-size:120% ;
+}
+
+.post_content{
+    font-size:180% ;
+}
+
+.ui-btn-inner{
+    font-size:170%;
+}
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+#header_text{
+    font-size:180% ;
+    font-weight:500 ;
+}
+
+.post_headline {
+    font-size:160% ;
+}
+
+.post_date{
+    font-size:90% ;
+}
+
+.post_content{
+    font-size:100% ;
+}
+
+.ui-btn-inner{
+    font-size:100%;
+}
+
+}
+
+@media (max-width: 330px) {
+
+#header_text{
+    font-size:180% ;
+    font-weight:500 ;
+}
+
+.post_headline {
+    margin:0;
+    font-size:160% ;
+}
+
+hr {
+    margin:0;
+    width:100%;
+}
+
+.post_date{
+    font-size:90% ;
+    margin:0;
+    margin-top:10px;
+}
+
+.post_content{
+    font-size:100% ;
+    margin-top:0;
+}
+
+.ui-btn-inner{
+    font-size:80%;
+}
+
+}
