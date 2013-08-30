@@ -553,6 +553,7 @@ Copyright ©2013 DNN Corp. All rights reserved.
                 $(".post_headline").html("Loading...");
                 $(".post_date").html("Loading...");
                 $(".post_content").html("Loading...");
+                $(".post_feat_img").attr("src", "");    
                 
                 $.getJSON(config.serverUrl+'public_lib/get_news/'+postId, function(data){
                     var post_date = data[0].dnn_post_date;
