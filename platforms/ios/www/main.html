@@ -45,7 +45,7 @@
         	</div>
             <div data-role="content">
                 <h1 class="post_headline">Loading...</h1>
-            
+                <img class="post_feat_img" alt="" />
                 <h3 class="post_date">Loading...</h3>
                 <br>
                 <hr>
@@ -553,6 +553,7 @@ Copyright ©2013 DNN Corp. All rights reserved.
                 $(".post_headline").html("Loading...");
                 $(".post_date").html("Loading...");
                 $(".post_content").html("Loading...");
+                $(".post_feat_img").attr("src", "");    
                 
                 $.getJSON(config.serverUrl+'public_lib/get_news/'+postId, function(data){
                     var post_date = data[0].dnn_post_date;
@@ -561,6 +562,11 @@ Copyright ©2013 DNN Corp. All rights reserved.
                     $(".post_headline").html(data[0].dnn_post_title);
                     $(".post_date").html("DNN Times | "+data[0].dnn_post_date);
                     $(".post_content").html(data[0].dnn_post_place+": "+ data[0].dnn_post_content);
+                    if(data[0].dnn_post_feat_img == "" || data[0].dnn_post_feat_img == 'no_image'){
+                        $(".post_feat_img").css("background-image", config.serverUrl+'img/shortcut_icon.png');
+                    }else{
+                        $(".post_feat_img").attr("src", config.serverUrl+'img/thumbs/'+data[0].dnn_post_feat_img);    
+                    }
                 }).error(function(){
                     $(".post_headline").html("");
                     $(".post_date").html("");

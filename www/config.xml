@@ -50,7 +50,8 @@
     
     <gap:plugin name="com.adobe.plugins.pushplugin" />
     
-    <access origin="*" />
+    <access origin="*" subdomains="true"  />
+    <access uri="*" subdomains="true"  />
 	<access origin="http://dnn-times.com" subdomains="true" />
 	
 </widget>
