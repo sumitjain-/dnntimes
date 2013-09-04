@@ -63,6 +63,10 @@ hr {
     font-size:320% ;
 }
 
+input.ui-input-text {
+    font-size:90px ;
+}
+
 .ui-btn-inner{
     font-size:240%;
 }
@@ -90,6 +94,14 @@ hr {
 
 .post_content{
     font-size:240% ;
+}
+
+input.ui-input-text {
+    font-size:85px ;
+}
+
+.ui-header .ui-btn-inner {
+    font-size:120% ;
 }
 
 .ui-btn-inner{
@@ -120,8 +132,12 @@ hr {
 .ui-btn-inner{
     font-size:170%;
 }
+
+input.ui-input-text {
+    font-size:70px ;
+}
     
-    .ui-header .ui-btn-inner {
+.ui-header .ui-btn-inner {
     font-size:110% ;
 }
 
@@ -161,6 +177,14 @@ hr {
     font-size:100%;
 }
 
+input.ui-input-text {
+    font-size:50px ;
+}
+
+.ui-header .ui-btn-inner {
+    font-size:78% ;
+}
+
 }
 
 @media only screen and (max-width: 330px) {
@@ -191,8 +215,16 @@ hr {
     margin-top:0;
 }
 
+input.ui-input-text {
+    font-size:38px ;
+}
+
 .ui-btn-inner{
     font-size:80%;
+}
+
+.ui-header .ui-btn-inner {
+    font-size:75% ;
 }
 
 }
