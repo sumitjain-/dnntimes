@@ -9,7 +9,7 @@ body {
     font-family:heading  ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-family:sans-serif ;
     font-weight:900 ;
     font-size:2.3em ;
@@ -51,7 +51,7 @@ hr {
     font-size:680% ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-size:380% ;
 }
 
@@ -84,7 +84,7 @@ input.ui-input-text {
     font-size:600% ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-size:330% ;
 }
 
@@ -117,7 +117,7 @@ input.ui-input-text {
     font-size:530% ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-size:280% ;
 }
 
@@ -161,7 +161,7 @@ input.ui-input-text {
     font-weight:500 ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-size:160% ;
 }
 
@@ -194,7 +194,7 @@ input.ui-input-text {
     font-weight:500 ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     margin:0;
     font-size:160% ;
 }
