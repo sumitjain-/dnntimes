@@ -60,8 +60,7 @@ hr {
 }
 
 .post_content{
-    font-size:400% ;
-    line-height:130% ;
+    font-size:240% ;
 }
 
 .ui-btn-inner{
@@ -90,7 +89,7 @@ hr {
 }
 
 .post_content{
-    font-size:320% ;
+    font-size:180% ;
 }
 
 .ui-btn-inner{
@@ -115,7 +114,7 @@ hr {
 }
 
 .post_content{
-    font-size:320% ;
+    font-size:180% ;
 }
 
 .ui-btn-inner{
@@ -147,6 +146,10 @@ hr {
 .ui-btn-inner{
     font-size:100%;
 }
+    
+.ui-header .ui-btn-inner {
+    font-size:100% ;
+}
 
 }
 
@@ -174,7 +177,7 @@ hr {
 }
 
 .post_content{
-    font-size:180% ;
+    font-size:100% ;
     margin-top:0;
 }
 
