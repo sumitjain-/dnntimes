@@ -24,7 +24,7 @@
         <div class="wrap" data-role="page" id="index">
         	<div class="header" data-role="header" data-position="fixed">
         		<a href="" onclick="refresh_feeds()" data-icon="refresh" class="ui-btn-left">Refresh</a>
-                <h1 id="header_text">DNN <span class="times">Times</span></h1>
+                <h1 id="header_text">DNN Times</h1>
                 <a href="#options" data-icon="gear" class="ui-btn-right">Options</a>
         	</div>
             
@@ -40,23 +40,21 @@
         </div>
         <div data-role="page" id="post" data-add-back-btn="true" >
             <div class="header" data-role="header" data-position="fixed">
-        		<h1 id="header_text">DNN <span class="times">Times</span></h1>
+        		<h1 id="header_text">DNN Times</h1>
                 <a href="#options" data-icon="gear" class="ui-btn-right">Options</a>
         	</div>
             <div data-role="content">
                 <h1 class="post_headline">Loading...</h1>
                 <img class="post_feat_img" alt="" />
                 <h3 class="post_date">Loading...</h3>
-                <br>
                 <hr>
-                <br>
                 <p class="post_content">Loading...</p>
             </div>
         </div>
         
         <div data-role="page" id="options" data-add-back-btn="true" >
             <div class="header" data-role="header" data-position="fixed">
-        		<h1 id="header_text">DNN <span class="times">Times</span></h1>
+        		<h1 id="header_text">DNN Times</h1>
         	</div>
             <ul data-role="listview" data-theme="a">
                 <li><a href="#register_device" >Register</a></li>
@@ -69,10 +67,10 @@
         <div id="register_device" data-role="page" data-theme="b" data-overlay-theme="a" data-add-back-btn="true" >
             <div class="header" data-role="header" data-position="fixed">
                 
-        		<h1 id="header_text">DNN <span class="times">Times</span></h1>
+        		<h1 id="header_text">DNN Times</h1>
         	</div>
             <div data-role="content">
-                <h3 class="post_headline">Register your device</h3>
+                <h3 class="reg_headline">Register your device</h3>
                 <br>
                 <hr>
                 <br>
@@ -93,7 +91,7 @@
         
         <div id="terms" data-role="page" data-add-back-btn="true">
             <div class="header" data-role="header" data-position="fixed">
-        		<h1 id="header_text">DNN <span class="times">Times</span></h1>
+        		<h1 id="header_text">DNN Times</h1>
                 <a href="#options" data-icon="gear" class="ui-btn-right">Options</a>
         	</div>
             <div data-role="content">
@@ -407,7 +405,7 @@ Copyright ©2013 DNN Corp. All rights reserved.
         
         <div id="feedback" data-role="page" data-add-back-btn="true">
             <div class="header" data-role="header" data-position="fixed">
-        		<h1 id="header_text">DNN <span class="times">Times</span></h1>
+        		<h1 id="header_text">DNN Times</h1>
                 <a href="#options" data-icon="gear" class="ui-btn-right">Options</a>
         	</div>
             <div data-role="content" data-theme="a">
@@ -562,8 +560,8 @@ Copyright ©2013 DNN Corp. All rights reserved.
                     $(".post_headline").html(data[0].dnn_post_title);
                     $(".post_date").html("DNN Times | "+data[0].dnn_post_date);
                     $(".post_content").html(data[0].dnn_post_place+": "+ data[0].dnn_post_content);
-                    if(data[0].dnn_post_feat_img == "" || data[0].dnn_post_feat_img == 'no_image'){
-                        $(".post_feat_img").css("background-image", config.serverUrl+'img/shortcut_icon.png');
+                    if(data[0].dnn_post_feat_img == "" || data[0].dnn_post_feat_img == 'default.jpg'){
+                        $(".post_feat_img").attr("src", 'img/default.jpg');
                     }else{
                         $(".post_feat_img").attr("src", config.serverUrl+'img/thumbs/'+data[0].dnn_post_feat_img);    
                     }
