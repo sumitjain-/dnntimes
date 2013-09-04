@@ -500,7 +500,9 @@ Copyright ©2013 DNN Corp. All rights reserved.
                     console.log("No mobile number");
                     valid = 0 ;
                 }else{
-                    
+                    if(register_mobnum.indexOf("+91") >= 0){
+                        $("#mobnum_error").html("Please enter mobile number without country code");
+                    }
                 };
                 
                 
@@ -510,10 +512,10 @@ Copyright ©2013 DNN Corp. All rights reserved.
             
             function register_device(){    
                 
+                
                 $("#reg_key").val(regID);
                 $("#reg_platform").val(device.platform);
                 console.log(regID);
-                
                 var form = $("#register_new"),
                     formData = form.serialize(),
                     formUrl = form.attr("action"),  
