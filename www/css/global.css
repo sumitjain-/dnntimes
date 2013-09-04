@@ -48,7 +48,7 @@ hr {
 @media only screen and (min-width: 980px) { 
 
 #header_text{
-    font-size:380% ;
+    font-size:680% ;
 }
 
 .post_headline {
@@ -60,7 +60,8 @@ hr {
 }
 
 .post_content{
-    font-size:240% ;
+    font-size:400% ;
+    line-height:130% ;
 }
 
 .ui-btn-inner{
@@ -77,7 +78,7 @@ hr {
 @media only screen and (min-width: 768px) and (max-width: 979px) { 
 
 #header_text{
-    font-size:330% ;
+    font-size:600% ;
 }
 
 .post_headline {
@@ -89,7 +90,7 @@ hr {
 }
 
 .post_content{
-    font-size:180% ;
+    font-size:320% ;
 }
 
 .ui-btn-inner{
@@ -102,7 +103,7 @@ hr {
 @media only screen and (max-width: 767px) {
 
 #header_text{
-    font-size:300% ;
+    font-size:530% ;
 }
 
 .post_headline {
@@ -114,7 +115,7 @@ hr {
 }
 
 .post_content{
-    font-size:180% ;
+    font-size:320% ;
 }
 
 .ui-btn-inner{
@@ -173,7 +174,7 @@ hr {
 }
 
 .post_content{
-    font-size:100% ;
+    font-size:180% ;
     margin-top:0;
 }
 
