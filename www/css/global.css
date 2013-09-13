@@ -13,7 +13,7 @@ div.ui-input-text input.ui-input-text{
     padding: 3px 0px;
 }
 
-.post_headline , .reg_headline {
+.post_headline , .reg_headline, .terms_headline {
     font-family:sans-serif ;
     font-weight:900 ;
     font-size:2.3em ;
@@ -41,7 +41,7 @@ hr {
     border:solid #eee 1px ;
 }
 
-.post_content {
+.post_content, .terms_content {
     font-family:sans-serif ;
     line-height:150%;
     text-align:justify ;
@@ -55,7 +55,7 @@ hr {
     font-size:680% ;
 }
 
-.post_headline , .reg_headline {
+.post_headline , .reg_headline, .terms_headline {
     font-size:380% ;
 }
 
@@ -63,7 +63,7 @@ hr {
     font-size:170% ;
 }
 
-.post_content{
+.post_content, .terms_content{
     font-size:320% ;
 }
 
@@ -88,7 +88,7 @@ input.ui-input-text {
     font-size:600% ;
 }
 
-.post_headline , .reg_headline {
+.post_headline , .reg_headline, .terms_headline {
     font-size:330% ;
 }
 
@@ -96,7 +96,7 @@ input.ui-input-text {
     font-size:150% ;
 }
 
-.post_content{
+.post_content, .terms_content{
     font-size:240% ;
 }
 
@@ -121,7 +121,7 @@ input.ui-input-text {
     font-size:530% ;
 }
 
-.post_headline , .reg_headline {
+.post_headline , .reg_headline, .terms_headline {
     font-size:280% ;
 }
 
@@ -129,7 +129,7 @@ input.ui-input-text {
     font-size:120% ;
 }
 
-.post_content{
+.post_content, .terms_content{
     font-size:240% ;
 }
 
@@ -165,7 +165,7 @@ input.ui-input-text {
     font-weight:500 ;
 }
 
-.post_headline , .reg_headline {
+.post_headline , .reg_headline, .terms_headline {
     font-size:160% ;
 }
 
@@ -173,7 +173,7 @@ input.ui-input-text {
     font-size:90% ;
 }
 
-.post_content{
+.post_content, .terms_content{
     font-size:155% ;
 }
 
@@ -198,7 +198,7 @@ input.ui-input-text {
     font-weight:500 ;
 }
 
-.post_headline , .reg_headline {
+.post_headline , .reg_headline, .terms_headline {
     margin:0;
     font-size:160% ;
 }
@@ -214,7 +214,7 @@ hr {
     margin-top:10px;
 }
 
-.post_content{
+.post_content, .terms_content{
     font-size:110% ;
     margin-top:0;
 }

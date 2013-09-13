@@ -34,6 +34,8 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         
+        alert("This");
+        
         
         var pushNotification = window.plugins.pushNotification;
         // TODO: Enter your own GCM Sender ID in the register call for Android

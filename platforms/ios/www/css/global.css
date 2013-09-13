@@ -1,15 +1,25 @@
 @font-face{font-family: heading;src: url('bauhaus-93.ttf');} 
 
+body {
+    background-image:url(../img/fabric_of_squares_gray.png);    
+}
+
 #header_text{
     margin:10px ;
     font-family:heading  ;
 }
 
-.post_headline {
+div.ui-input-text input.ui-input-text{
+    padding: 3px 0px;
+}
+
+.post_headline , .reg_headline {
     font-family:sans-serif ;
     font-weight:900 ;
     font-size:2.3em ;
     margin:20px 3% ;
+    text-shadow:1px 1px 1px #555 ;
+    opacity:80% ;
 }
 
 .post_feat_img {
@@ -34,18 +44,18 @@ hr {
 .post_content {
     font-family:sans-serif ;
     line-height:150%;
-    
+    text-align:justify ;
     margin:20px 3% ;
 }
 
 /* Large desktop */
-@media (min-width: 980px) { 
+@media only screen and (min-width: 980px) { 
 
 #header_text{
-    font-size:380% ;
+    font-size:680% ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-size:380% ;
 }
 
@@ -54,7 +64,11 @@ hr {
 }
 
 .post_content{
-    font-size:240% ;
+    font-size:320% ;
+}
+
+input.ui-input-text {
+    font-size:90px ;
 }
 
 .ui-btn-inner{
@@ -68,13 +82,13 @@ hr {
 }
 
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { 
+@media only screen and (min-width: 768px) and (max-width: 979px) { 
 
 #header_text{
-    font-size:330% ;
+    font-size:600% ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-size:330% ;
 }
 
@@ -83,7 +97,15 @@ hr {
 }
 
 .post_content{
-    font-size:180% ;
+    font-size:240% ;
+}
+
+input.ui-input-text {
+    font-size:85px ;
+}
+
+.ui-header .ui-btn-inner {
+    font-size:120% ;
 }
 
 .ui-btn-inner{
@@ -93,13 +115,13 @@ hr {
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 
 #header_text{
-    font-size:300% ;
+    font-size:530% ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-size:280% ;
 }
 
@@ -108,24 +130,42 @@ hr {
 }
 
 .post_content{
-    font-size:180% ;
+    font-size:240% ;
 }
 
 .ui-btn-inner{
     font-size:170%;
 }
 
+input.ui-input-text {
+    font-size:70px ;
+}
+    
+.ui-header .ui-btn-inner {
+    font-size:110% ;
 }
 
+}
+
+
+@media only screen (max-width: 675px) and (min-width: 481px){
+
+.ui-header .ui-btn-inner {
+    font-size:100% ;
+}
+
+}
+
+
 /* Landscape phones and down */
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 
 #header_text{
-    font-size:180% ;
+    font-size:320% ;
     font-weight:500 ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     font-size:160% ;
 }
 
@@ -134,23 +174,31 @@ hr {
 }
 
 .post_content{
-    font-size:100% ;
+    font-size:155% ;
 }
 
 .ui-btn-inner{
     font-size:100%;
 }
 
+input.ui-input-text {
+    font-size:50px ;
 }
 
-@media (max-width: 330px) {
+.ui-header .ui-btn-inner {
+    font-size:78% ;
+}
+
+}
+
+@media only screen and (max-width: 330px) {
 
 #header_text{
     font-size:180% ;
     font-weight:500 ;
 }
 
-.post_headline {
+.post_headline , .reg_headline {
     margin:0;
     font-size:160% ;
 }
@@ -167,12 +215,20 @@ hr {
 }
 
 .post_content{
-    font-size:100% ;
+    font-size:110% ;
     margin-top:0;
+}
+
+input.ui-input-text {
+    font-size:38px ;
 }
 
 .ui-btn-inner{
     font-size:80%;
+}
+
+.ui-header .ui-btn-inner {
+    font-size:75% ;
 }
 
 }
