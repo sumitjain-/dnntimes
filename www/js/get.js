@@ -12,7 +12,7 @@ function feed_init(){
         for(i=0; i < no_of_notif ; i++){
 //            console.log(data[i].post_id);
 //            console.log(moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY"));
-            $('#notif_display').append('<li><a class="" id="notif" href="#post" data-transition="flip" onclick="get_post('+data[i].post_id+')"><h1>'+ data[i].dnn_post_title +'</h1><p>'+moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY")+'</p></a></li>');
+            $('#notif_display').append('<li><a class="" id="notif" href="#post" data-transition="slide" onclick="get_post('+data[i].post_id+')"><h1>'+ data[i].dnn_post_title +'</h1><p>'+moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY")+'</p></a></li>');
         }
     
         first = data[0].post_id ;
@@ -45,7 +45,7 @@ function new_feed(){
             alert("No new feeds");
         }else{
         for(i=0; i < no_of_notif ; i++){
-            $('#notif_display').prepend('<li><a class="" id="notif" href="#post" data-transition="flip" onclick="get_post('+data[i].post_id+')"><h4>'+ data[i].dnn_post_title +'</h4><p>'+moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY")+'</p></a></li>');
+            $('#notif_display').prepend('<li><a class="" id="notif" href="#post" data-transition="slide" onclick="get_post('+data[i].post_id+')"><h4>'+ data[i].dnn_post_title +'</h4><p>'+moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY")+'</p></a></li>');
         }
             
         first = data[0].post_id ;
@@ -73,7 +73,7 @@ function load_more(){
         no_of_notif = data.length ;
         
         for(i = 0 ; i < no_of_notif ; i++ ){
-            $('#notif_display').append('<li><a class="" id="notif" href="#post" data-transition="flip" onclick="get_post('+data[i].post_id+')"><h4>'+ data[i].dnn_post_title +'</h4><p>'+moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY")+'</p></a></li>');
+            $('#notif_display').append('<li><a class="" id="notif" href="#post" data-transition="slide" onclick="get_post('+data[i].post_id+')"><h4>'+ data[i].dnn_post_title +'</h4><p>'+moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY")+'</p></a></li>');
 //            console.log(data[i].post_id);
         }
         
