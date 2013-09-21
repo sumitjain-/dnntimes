@@ -85,7 +85,7 @@ function load_more(){
         if(last == 156 ){
             $('#notif_display').append('<li data-theme="b"><h1>No more posts.. </h1></li>')
         }else{
-        $('#notif_display').append('<li id="loadMore" data-theme="b" data-inset="true"><a href="#index" data-theme="b" onclick="load_more()">Load more</a></li>');
+        $('#notif_display').append('<li id="loadMore" data-theme="b" data-inset="true"><a href="#index" data-theme="b" onclick="load_more()"><h1>Load more</a></h1></li>');
         }
         $('#notif_display').listview('refresh');
 
