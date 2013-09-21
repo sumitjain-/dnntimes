@@ -18,7 +18,7 @@ function feed_init(){
         first = data[0].post_id ;
         last = data[no_of_notif - 1].post_id;
         
-        $('#notif_display').append('<li id="loadMore" data-theme="b" data-inset="true"><a data-theme="b" onclick="load_more('+first+')">Load more</a></li>');
+        $('#notif_display').append('<li id="loadMore" data-theme="b" data-inset="true"><a data-theme="b" onclick="load_more('+first+')"><h1>Load more</h1></a></li>');
         
         $('#notif_display').listview('refresh');
         
