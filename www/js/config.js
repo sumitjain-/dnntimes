@@ -9,3 +9,11 @@ $.ajaxSetup({
         $("#notif_display").append('<li>No network</li>');
     }
 });
+
+$(document).ajaxStart(function(){
+    $.mobile.loading('show');
+});
+
+$(document).ajaxComplete(function(){
+    $.mobile.loading('hide');
+});

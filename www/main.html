@@ -14,34 +14,39 @@
         
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="PushNotification.js"></script>
+        
         <script type="text/javascript" src="js/index.js"></script>
         
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-        
+        <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
         
         
         <div class="wrap" data-role="page" id="index">
         	<div class="header" data-role="header" data-position="fixed">
-        		<a href="" onclick="refresh_feeds()" data-icon="refresh" class="ui-btn-left">Refresh</a>
+        		<a href="" onclick="new_feed()" data-icon="refresh" class="ui-btn-left">Refresh</a>
                 <h1 id="header_text">DNN Times</h1>
-                <a href="#options" data-icon="gear" class="ui-btn-right">Register</a>
+                <a href="#options" data-icon="gear" class="ui-btn-right">Options</a>
         	</div>
             
             <div data-role="content">
                 <ul data-role="listview" data-theme="a" data-inset="false" id="notif_display">
                     <li>Loading...</li>
                 </ul>
-                <ul data-role="listview" data-theme="b" data-inset="true">
-                    <li>No more posts..</li>
-                </ul>
+                <div data-role="panel" data-position="right" data-display="overlay" data-theme="a" id="options" data-add-back-btn="true" >
+                    <ul data-role="listview" data-theme="a">
+                        <li><a href="#register_device" >Register</a></li>
+                        <li><a href="#terms" >Terms of use</a></li>
+                        <li><a href="#feedback" >Send feedback</a></li>
+                    </ul>
+                </div>
             </div>
             
         </div>
         <div data-role="page" id="post" data-add-back-btn="true" >
             <div class="header" data-role="header" data-position="fixed">
         		<h1 id="header_text">DNN Times</h1>
-                <a href="#options" data-icon="gear" class="ui-btn-right">Register</a>
+                <!--<a href="#options" data-icon="gear" class="ui-btn-right">Register</a>-->
         	</div>
             <div data-role="content">
                 <h1 class="post_headline">Loading...</h1>
@@ -52,17 +57,7 @@
             </div>
         </div>
         
-        <div data-role="page" id="options" data-add-back-btn="true" >
-            <div class="header" data-role="header" data-position="fixed">
-        		<h1 id="header_text">DNN Times</h1>
-        	</div>
-            <ul data-role="listview" data-theme="a">
-                <li><a href="#register_device" >Register</a></li>
-                <li><a href="#terms" >Terms of use</a></li>
-                <li><a href="#feedback" >Send feedback</a></li>
-                <li data-theme="b" data-icon="back"><a href="#index" >Back to home</a></li>
-            </ul>
-        </div>
+        
         
         <div id="register_device" data-role="page" data-theme="b" data-overlay-theme="a" data-add-back-btn="true" >
             <div class="header" data-role="header" data-position="fixed">
@@ -406,7 +401,7 @@ Copyright ©2013 DNN Corp. All rights reserved.
         <div id="feedback" data-role="page" data-add-back-btn="true">
             <div class="header" data-role="header" data-position="fixed">
         		<h1 id="header_text">DNN Times</h1>
-                <a href="#options" data-icon="gear" class="ui-btn-right">Register</a>
+                
         	</div>
             <div data-role="content" data-theme="a">
                 <h1 class="post_headline">Send feedback</h1>
@@ -437,143 +432,6 @@ Copyright ©2013 DNN Corp. All rights reserved.
         <script type="text/javascript">
             app.initialize();
             
-            function submit_form(){
-            
-                    var form = $("#feedback_form"),
-                        formData = form.serialize(),
-                        formUrl = form.attr("action"),  
-                        formMethod = form.attr('method'),   
-                        responseMsg = $('#feedback_return');
-                    
-                    
-                    $.ajax({
-                        url: formUrl,  
-                        type: formMethod,  
-                        data: formData,  
-                        success:function(data){  
-                            responseMsg.html("Feedback sent"); 
-                        },
-                        error:function(){
-                            responseMsg.html("Something went wrong. Try again later.");
-                        }
-                    });
-                    
-                    return false ;
-            
-            }
-            
-            function form_validation(){
-                
-                    $("#name_error").html("");
-                    $("#email_error").html("");
-                    $("#mobnum_error").html("");
-                
-                var register_name = $("#register_name").val();
-                var register_email = $("#register_email").val();
-                var register_mobnum = $("#register_mobnum").val();
-                console.log("name = "+ register_name);
-                console.log("E-mail = "+ register_email);
-                console.log("Mobile number = "+ register_mobnum);
-                
-                var valid = 1 ;
-                
-                if( register_name == ""){
-                    $("#name_error").html("Please enter a valid name");
-                    console.log("No name");
-                    console.log("name = "+ register_name);
-                    valid = 0 ;
-                    
-                }else{
-                    console.log("name = "+ register_name);
-                };
-                
-                if( register_email == ""){
-                    $("#email_error").html("Please enter a valid E-mail ID");
-                    console.log("No E-mail");
-                    valid = 0 ;
-                }else{
-                    
-                };
-                
-                if( register_mobnum == ""){
-                    $("#mobnum_error").html("Please enter a valid mobile number");
-                    console.log("No mobile number");
-                    valid = 0 ;
-                }else{
-                    if(register_mobnum.indexOf("+91") >= 0){
-                        $("#mobnum_error").html("Please enter mobile number without country code");
-                        valid = 0 ;
-                    }
-                };
-                
-                
-                return valid ;
-                
-            }
-            
-            function register_device(){    
-                
-                
-                $("#reg_key").val(regID);
-                $("#reg_platform").val(device.platform);
-                console.log(regID);
-                var form = $("#register_new"),
-                    formData = form.serialize(),
-                    formUrl = form.attr("action"),  
-                    formMethod = form.attr('method'),
-                    responseMsg = $("#register_response");
-                    
-                var check_form = form_validation();
-                
-                if(check_form){
-                
-                    $.ajax({  
-                        url: formUrl,
-                        dataType: "html",
-                        type: formMethod,  
-                        data: formData,  
-                        success:function(data){  
-                            responseMsg.html(data);
-                            console.log(data);
-                        },
-                        error:function(){
-                            responseMsg.html("something went wrong");
-                        }
-                    });
-                    
-                    return false ;
-                    
-                }else{
-                    return false ;
-                }
-            
-            }
-            
-            function get_post(postId){
-                
-                $(".post_headline").html("Loading...");
-                $(".post_date").html("Loading...");
-                $(".post_content").html("Loading...");
-                $(".post_feat_img").attr("src", "");    
-                
-                $.getJSON(config.serverUrl+'public_lib/get_news/'+postId, function(data){
-                    var post_date = data[0].dnn_post_date;
-                    console.log(data);
-                    console.log(post_date);
-                    $(".post_headline").html(data[0].dnn_post_title);
-                    $(".post_date").html("DNN Times | "+data[0].dnn_post_date);
-                    $(".post_content").html(data[0].dnn_post_place+": "+ data[0].dnn_post_content);
-                    if(data[0].dnn_post_feat_img == "" || data[0].dnn_post_feat_img == 'default.jpg'){
-                        $(".post_feat_img").attr("src", 'img/default.jpg');
-                    }else{
-                        $(".post_feat_img").attr("src", config.serverUrl+'img/thumbs/'+data[0].dnn_post_feat_img);    
-                    }
-                }).error(function(){
-                    $(".post_headline").html("");
-                    $(".post_date").html("");
-                    $(".post_content").html("Something went wrong. Please try again later.");
-                });
-            }
             
         </script>
         
