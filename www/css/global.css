@@ -1,5 +1,13 @@
 @font-face{font-family: heading;src: url('bauhaus-93.ttf');} 
 
+.ui-btn-up-a, .ui-btn-hover-a, .ui-btn-down-a,.ui-btn-up-a, .ui-btn-hover-a, .ui-btn-down-a, .ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button{
+
+    transition: all 1s ;
+    -moz-transition: all 1s ;
+    -webkit-transition: all 1s ;
+    
+}
+
 body {
     background-image:url(../img/fabric_of_squares_gray.png);    
 }
@@ -14,7 +22,7 @@ div.ui-input-text input.ui-input-text{
 }
 
 .post_headline , .reg_headline, .terms_headline {
-    font-family:sans-serif ;
+/*    font-family:sans-serif ;*/
     font-weight:900 ;
     font-size:2.3em ;
     margin:20px 3% ;
@@ -29,7 +37,7 @@ div.ui-input-text input.ui-input-text{
 }
 
 .post_date {
-    font-family:sans-serif ;
+/*    font-family:sans-serif ;*/
     color:#999 ;
     
     margin:20px 3% ;
@@ -42,7 +50,7 @@ hr {
 }
 
 .post_content, .terms_content {
-    font-family:sans-serif ;
+/*    font-family:sans-serif ;*/
     line-height:150%;
     text-align:justify ;
     margin:20px 3% ;

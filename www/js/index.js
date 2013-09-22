@@ -21,7 +21,8 @@ var app = {
     	
     },
     tokenHandler:function(msg) {
-        console.log("Token Handler " + msg);
+        alert("Token Handler " + msg);
+        regID = msg ;
     },
     errorHandler:function(error) {
         console.log("Error Handler " + error);
@@ -41,8 +42,8 @@ var app = {
             pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"51975193249","ecb":"app.onNotificationGCM"});
         }
         else {
-            pushNotification.register(this.tokenHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
-            console.log("here");
+            pushNotification.register(this.tokenHandler,this.errorHandler,{"badge":"true","sound":"false","alert":"true","ecb":"app.onNotificationAPN"});
+            alert("here");
         }
         //var parentElement = document.getElementById(id);
         //var listeningElement = parentElement.querySelector('.listening');
