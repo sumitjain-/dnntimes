@@ -19,7 +19,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         PLATFORM = device.platform ;
-        alert(PLATFORM);
+        alert("Platform: "+PLATFORM);
         app.receivedEvent('deviceready');
         
     	

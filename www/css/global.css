@@ -1,12 +1,5 @@
 @font-face{font-family: heading;src: url('bauhaus-93.ttf');} 
 
-.ui-btn-up-a, .ui-btn-hover-a, .ui-btn-down-a,.ui-btn-up-a, .ui-btn-hover-a, .ui-btn-down-a, .ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button{
-
-    transition: all 1s ;
-    -moz-transition: all 1s ;
-    -webkit-transition: all 1s ;
-    
-}
 
 body {
     background-image:url(../img/fabric_of_squares_gray.png);    
