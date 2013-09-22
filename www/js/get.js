@@ -18,7 +18,7 @@ function feed_init(){
         first = data[0].post_id ;
         last = data[no_of_notif - 1].post_id;
         
-        $('#notif_display').append('<li id="loadMore" data-theme="b" data-inset="true"><a data-theme="b" onclick="load_more('+first+')"><h1>Load more</h1></a></li>');
+        $('#notif_display').append('<li id="loadMore" data-theme="a" data-inset="true"><a onclick="load_more('+first+')"><h1>Load more</h1></a></li>');
         
         $('#notif_display').listview('refresh');
         
@@ -73,7 +73,7 @@ function load_more(){
         no_of_notif = data.length ;
         
         for(i = 0 ; i < no_of_notif ; i++ ){
-            $('#notif_display').append('<li><a class="" id="notif" href="#post" data-transition="slide" onclick="get_post('+data[i].post_id+')"><h4>'+ data[i].dnn_post_title +'</h4><p>'+moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY")+'</p></a></li>');
+            $('#notif_display').append('<li data-theme="'+current_theme+'"><a class="" id="notif" href="#post" data-transition="slide" onclick="get_post('+data[i].post_id+')"><h4>'+ data[i].dnn_post_title +'</h4><p>'+moment(data[i].dnn_post_date, "DD-MM-YYYY").format("Do MMM YYYY")+'</p></a></li>');
 //            console.log(data[i].post_id);
         }
         
@@ -85,11 +85,12 @@ function load_more(){
         if(last == 156 ){
             $('#notif_display').append('<li data-theme="b"><h1>No more posts.. </h1></li>')
         }else{
-        $('#notif_display').append('<li id="loadMore" data-theme="b" data-inset="true"><a href="#index" data-theme="b" onclick="load_more()"><h1>Load more</h1></a></li>');
+        $('#notif_display').append('<li id="loadMore" data-theme="'+current_theme+'" data-inset="true"><a href="#index" onclick="load_more()"><h1>Load more</h1></a></li>');
+        
         }
         $('#notif_display').listview('refresh');
 
-    });
+    }).ajaxComplete(theme_apply());
     
 }
 
